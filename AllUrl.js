@@ -1,0 +1,1 @@
+NOTES_URL="https://notes-backend-66i8.onrender.com/"

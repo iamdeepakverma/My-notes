@@ -46,7 +46,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
   const addNewNote = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/note/add",
+        "https://notes-backend-66i8.onrender.com/api/note/add",
         { title, content, tags },
         { withCredentials: true }
       )

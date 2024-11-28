@@ -43,7 +43,7 @@ const Home = () => {
   const getAllNotes = async () => {
     try {
       // const res = await axios.get("http://localhost:3000/api/note/all", {
-      const res = await axios.get("https://notes-backend-0d4y.onrender.com/api/note/all", {
+      const res = await axios.get("https://notes-backend-66i8.onrender.com/api/note/all", {
         withCredentials: true,
       })
 
