@@ -4,8 +4,11 @@ import { Link, useNavigate } from "react-router-dom"
 import { validateEmail } from "../../utils/helper"
 import axios from "axios"
 import { toast } from "react-toastify"
+import { API_CONFIG } from "../../utils/config/apiConfig"
 
 const Signup = () => {
+
+
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -33,11 +36,9 @@ const Signup = () => {
 
     setError("")
 
-    // sign up api
     try {
       const res = await axios.post(
-        "https://notes-backend-66i8.onrender.com/api/auth/signup",
-        // "http://localhost:3000/api/auth/signup",
+        `${API_CONFIG.BASE_URL}/api/auth/signup`,
         { username: name, email, password },
         { withCredentials: true }
       )
