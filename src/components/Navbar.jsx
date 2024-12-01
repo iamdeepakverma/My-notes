@@ -10,6 +10,7 @@ import {
   signoutStart,
 } from "../redux/user/userSlice"
 import axios from "axios"
+import { API_CONFIG } from "../utils/config/apiConfig"
 
 const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
   const [searchQuery, setSearchQuery] = useState("")
@@ -32,7 +33,7 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
     try {
       dispatch(signoutStart())
 
-      const res = await axios.get("https://notes-backend-66i8.onrender.com/api/auth/signout", {
+      const res = await axios.get(`${API_CONFIG.BASE_URL}/api/auth/signout`, {
         withCredentials: true,
       })
 

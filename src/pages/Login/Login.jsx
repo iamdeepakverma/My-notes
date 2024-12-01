@@ -41,8 +41,6 @@ const Login = () => {
       dispatch(signInStart())
 
       const res = await axios.post(
-        // "https://notes-backend-66i8.onrender.com/api/auth/signin",
-        // "http://localhost:3000/api/auth/signin",
         `${API_CONFIG.BASE_URL}/api/auth/signin`,
         { email, password },
         { withCredentials: true }

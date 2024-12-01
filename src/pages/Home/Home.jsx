@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar"
 import axios from "axios"
 import { toast } from "react-toastify"
 import EmptyCard from "../../components/EmptyCard/EmptyCard"
+import { API_CONFIG } from "../../utils/config/apiConfig"
 
 const Home = () => {
   const { currentUser, loading, errorDispatch } = useSelector(
@@ -42,8 +43,8 @@ const Home = () => {
   // get all notes
   const getAllNotes = async () => {
     try {
-      // const res = await axios.get("http://localhost:3000/api/note/all", {
-      const res = await axios.get("https://notes-backend-66i8.onrender.com/api/note/all", {
+      // const res = await axios.get("https://notes-backend-66i8.onrender.com/api/note/all", {
+      const res = await axios.get(`${API_CONFIG.NOTE_API}/api/note/all`, {
         withCredentials: true,
       })
 

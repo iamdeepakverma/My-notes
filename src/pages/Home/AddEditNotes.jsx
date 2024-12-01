@@ -3,6 +3,7 @@ import { MdClose } from "react-icons/md"
 import TagInput from "../../components/Input/TagInput "
 import axios from "axios"
 import { toast } from "react-toastify"
+import { API_CONFIG } from "../../utils/config/apiConfig"
 
 const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
   const [title, setTitle] = useState(noteData?.title || "")
@@ -17,9 +18,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
 
     try {
       const res = await axios.post(
-        "https://notes-backend-66i8.onrender.com/api/note/edit/" + noteId,
-        // "http://localhost:3000/api/note/edit/" + noteId,
-        { title, content, tags },
+        `${API_CONFIG.NOTE_API}/edit-note/${noteId}`,{ title, content, tags },
         { withCredentials: true }
       )
 

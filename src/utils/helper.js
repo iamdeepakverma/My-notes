@@ -18,4 +18,3 @@ export const validateEmail = (email) => {
   return regex.test(email)
 }
 
-export const Allurl = "https://notes-backend-66i8.onrender.com/"
